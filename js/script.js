@@ -1,130 +1,115 @@
-let navbar = document.querySelector('.navbar')
+// Halaman untuk penjualan
+var currentPage = 1;
+var cardsPerPage = 5;
+var cards = document.querySelectorAll('.box-penjualan');
+var totalCards = cards.length;
+var totalPages = Math.ceil(totalCards / cardsPerPage);
 
-document.querySelector('#menu-bar').onclick = () =>{
-    navbar.classList.toggle('active');
-}
+function showPage(page) {
+    var start = (page - 1) * cardsPerPage;
+    var end = start + cardsPerPage;
 
-document.querySelector('#close').onclick = () =>{
-    navbar.classList.remove('active');
-}
-
-window.onscroll = () =>{
-
-    navbar.classList.remove('active');
-
-    if(window.scrollY > 100){
-        document.querySelector('header').classList.add('active');
-    }else{
-        document.querySelector('header').classList.remove('active');
-    }
-
-}
-
-let themeToggler = document.querySelector('#theme-toggler');
-
-themeToggler.onclick = () =>{
-    themeToggler.classList.toggle('fa-sun');
-    if(themeToggler.classList.contains('fa-sun')){
-        document.querySelector('body').classList.add('active');
-    }else{
-        document.querySelector('body').classList.remove('active');
+    for (var i = 0; i < cards.length; i++) {
+        if (i >= start && i < end) {
+            cards[i].style.display = 'block';
+        } else {
+            cards[i].style.display = 'none';
+        }
     }
 }
 
-document.querySelectorAll('.small-image-1').forEach(images =>{
-    images.onclick = () =>{
-        document.querySelector('.big-image-1').src = images.getAttribute('src');
+function updatePagination() {
+    var prevLink = document.querySelector('.prev');
+    var nextLink = document.querySelector('.next');
+    var pages = document.querySelector('.pages');
+
+    if (currentPage === 1) {
+        prevLink.style.display = 'none';
+    } else {
+        prevLink.style.display = 'inline-block';
     }
-});
 
-document.querySelectorAll('.small-image-2').forEach(images =>{
-    images.onclick = () =>{
-        document.querySelector('.big-image-2').src = images.getAttribute('src');
+    if (currentPage === totalPages) {
+        nextLink.style.display = 'none';
+    } else {
+        nextLink.style.display = 'inline-block';
     }
-});
 
-document.querySelectorAll('.small-image-3').forEach(images =>{
-    images.onclick = () =>{
-        document.querySelector('.big-image-3').src = images.getAttribute('src');
+    if (totalPages === 1) {
+        pages.style.display = 'none';
+    } else {
+        pages.style.display = 'block';
+
+        var startPage = 1;
+        var endPage = totalPages;
+
+        if (totalPages > 3) {
+            if (currentPage <= 2) {
+                endPage = 3;
+            } else if (currentPage >= totalPages - 1) {
+                startPage = totalPages - 2;
+            } else {
+                startPage = currentPage - 1;
+                endPage = currentPage + 1;
+            }
+        }
+
+        var pageLinks = '';
+
+        for (var i = startPage; i <= endPage; i++) {
+            if (i === currentPage) {
+                pageLinks += '<a class="active" disabled>' + i + '</a>';
+            } else {
+                pageLinks += '<a class="page-link" data-page="' + i + '">' + i + '</a>';
+            }
+        }
+
+        pages.innerHTML = pageLinks;
+
+        var pageLinks = document.querySelectorAll('.page-link');
+        pageLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var page = parseInt(this.dataset.page);
+                if (!this.classList.contains('active')) {
+                    navigateToPage(page);
+                }
+            });
+        });
     }
-});
-
-let countDate = new Date('aug 1, 2021 00:00:00').getTime();
-
-function countDown(){
-
-    let now = new Date().getTime();
-	gap = countDate - now;
-
-    let seconds = 1000;
-    let minutes = seconds * 60;
-    let hours = minutes * 60;
-    let days = hours * 24;
-
-    let d = Math.floor(gap / (days));
-	let h = Math.floor((gap % (days)) / (hours));
-	let m = Math.floor((gap % (hours)) / (minutes));
-	let s = Math.floor((gap % (minutes)) / (seconds));
-
-    document.getElementById('days').innerText = d;
-    document.getElementById('hours').innerText = h;
-    document.getElementById('minutes').innerText = m;
-    document.getElementById('seconds').innerText = s;
-
 }
 
-setInterval(function(){
-    countDown()
-},1000);
+function navigateToPage(page) {
+    currentPage = page;
+    showPage(currentPage);
+    updatePagination();
+}
 
-var swiper = new Swiper(".product-slider", {
-    slidesPerView: 3,
-    loop:true,
-    spaceBetween: 10,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        550: {
-          slidesPerView: 2,
-        },
-        800: {
-          slidesPerView: 3,
-        },
-        1000: {
-            slidesPerView: 3,
-        },
-    },
-});
+function navigateToPrev() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+        updatePagination();
+    }
+}
 
-var swiper = new Swiper(".review-slider", {
-    slidesPerView: 3,
-    loop:true,
-    spaceBetween: 10,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        550: {
-          slidesPerView: 2,
-        },
-        800: {
-          slidesPerView: 3,
-        },
-        1000: {
-            slidesPerView: 3,
-        },
-    },
+function navigateToNext() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+        updatePagination();
+    }
+}
+showPage(currentPage);
+updatePagination();
+var prevLink = document.querySelector('.prev');
+var nextLink = document.querySelector('.next');
+var pageLinks = document.querySelectorAll('.pages a');
+prevLink.addEventListener('click', navigateToPrev);
+nextLink.addEventListener('click', navigateToNext);
+pageLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+        var page = parseInt(this.innerHTML);
+        navigateToPage(page);
+    });
 });

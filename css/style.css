@@ -1,8 +1,8 @@
+/* Pengaturan website start */
 :root{
     --warna1:#5d3c00;
     --warna2:#ff0000c7;
 }
-
 *{
     margin:0; padding:0;
     box-sizing: border-box;
@@ -12,47 +12,36 @@
     text-transform: capitalize;
     transition: .2s linear;
 }
-
 html{
-    font-size: 62.5%;
+    font-size: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     overflow-x: hidden;
 }
+/* Pengaturan website end */
 
+
+
+/* Pengaturan Section Start */
 section{
     padding:2rem 9%;
 }
-
 .heading{
     text-align: center;
-    font-size: 4rem;
+    font-size: 2rem;
     color: var(--warna2);
     padding:1rem;
     margin:2rem 0;
     background:rgba(255, 51, 153,.05);
 }
-
 .heading span{
     color:var(--warna1);
 }
+/* Pengaturan Section End */
 
-.btn{
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 5rem;
-    background: var(--warna2);
-    color:#fff;
-    padding:.9rem 3.5rem;
-    cursor: pointer;
-    font-size: 1.7rem;
-}
 
-.btn:hover{
-    background:var(--warna1);
-    transform: scale(1.1);
-}
 
+/* Section Navigasi bar Start */
 header{
     position: fixed;
     top:0; left:0; right:0;
@@ -64,43 +53,35 @@ header{
     z-index: 1000;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
-
 header .logo{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--warna2);
     font-weight: bolder;
 }
-
 header .logo span{
     color:var(--warna1);
 }
-
 header .navbar a{
-    font-size: 2rem;
+    font-size: 1.3rem;
     padding:0 1.5rem;
     color:#666;
 }
-
 header .navbar a:hover{
     color:var(--warna2);
 }
-
 header .icons a{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--warna2);
     margin-left: 1.5rem;
 }
-
 header .icons a:hover{
     color:var(--warna1);
 }
-
 header #toggler{
     display: none;
 }
-
 header .fa-bars{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--warna2);
     border-radius: .5rem;
     padding:.5rem 1.5rem;
@@ -108,7 +89,11 @@ header .fa-bars{
     border:.1rem solid rgba(0,0,0,.3);
     display: none;
 }
+/* Section Navigasi bar End */
 
+
+
+/* Section Gambar hero Start */
 .home{
     display: flex;
     align-items: center;
@@ -117,30 +102,49 @@ header .fa-bars{
     background-size: cover;
     background-position: center;
 }
-
 .home .content{
     max-width: 50rem;
 }
-
 .home .content h3{
-    font-size: 6rem;
+    font-size: 3rem;
     color: var(--warna2);
 }
-
 .home .content span{
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: var(--warna1);
     padding:1rem 0;
     line-height: 1.5;
 }
-
 .home .content p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--warna1);
     padding:1rem 0;
     line-height: 1.5;
 }
+/* Section Gambar hero End */
 
+
+
+/* Pengaturan button Start */
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background: var(--warna2);
+    color:#fff;
+    padding:.7rem 1.7rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.btn:hover{
+    background:var(--warna1);
+    transform: scale(1.1);
+}
+/* Pengaturan button End */
+
+
+
+/* Section About Start */
 .about .row{
     display: flex;
     align-items: center;
@@ -149,12 +153,10 @@ header .fa-bars{
     padding:2rem 0;
     padding-bottom: 3rem;
 }
-
 .about .row .video-container{
     flex:1 1 40rem;
     position: relative;
 }
-
 .about .row .video-container video{
     width:100%;
     border:1.5rem solid #fff;
@@ -163,168 +165,180 @@ header .fa-bars{
     height: 100%;
     object-fit: cover;
 }
-
 .about .row .video-container h3{
     position: absolute;
     top:50%; transform: translateY(-50%);
-    font-size: 3rem;
+    font-size: 2rem;
     background:#fff;
     width:100%;
-    padding:1rem 2rem;
+    padding: .5rem 2rem;
     text-align: center;
     mix-blend-mode: screen;
 }
-
 .about .row .content{
     flex:1 1 40rem;
 }
-
 .about .row .content h3{
-    font-size: 3rem;
+    font-size: 1.7rem;
     color: var(--warna2);
 }
-
 .about .row .content p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color:#999;
     padding:.5rem 0;
     padding-top: 1rem;
     line-height: 1.5;
 }
+/* Section About End */
 
+
+
+/* Section icons Start */
 .icons-container{
     background:#eee;
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding: 1rem 0;
 }
-
 .icons-container .icons{
     background:#fff;
     border:.1rem solid rgba(0,0,0,.1);
-    padding:2rem;
+    padding:1rem;
     display: flex;
     align-items: center;
     flex:1 1 25rem;
 }
-
 .icons-container .icons img{
-    height:5rem;
+    height:4rem;
     margin-right: 2rem;
 }
-
 .icons-container .icons h3{
     color: var(--warna2);
     padding-bottom: .5rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
-
 .icons-container .icons span{
     color:#555;
-    font-size: 1.3rem;
+    font-size: .9rem;
 }
+/* Section icons End */
 
+
+
+/* Section Produck yang dijual Start */
 .products .box-container{
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
 }
-
-.products .box-container .box{
-    flex:1 1 30rem;
+.products .box-container .box-penjualan {
+    flex:1 1 20rem;
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     border-radius: .5rem;
     border:.1rem solid rgba(0,0,0,.1);
     position: relative;    
 }
-
-.products .box-container .box .discount{
+.products .box-container .box-penjualan .discount{
     position: absolute;
     top:1rem; left:1rem;
     padding:.7rem 1rem;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color:var(--warna2);
     background:rgba(255, 51, 153,.05);
     z-index: 1;
     border-radius: .5rem;
 }
-
-.products .box-container .box .image{
+.products .box-container .box-penjualan .image{
     position: relative;
     text-align: center;
     padding-top: 2rem;
     overflow:hidden;
 }
-
-.products .box-container .box .image img{
-    height:25rem;
+.products .box-container .box-penjualan .image img{
+    height:15rem;
 }
-
-.products .box-container .box:hover .image img{
+.products .box-container .box-penjualan:hover .image img{
     transform: scale(1.1);
 }
-
-.products .box-container .box .image .icons{
+.products .box-container .box-penjualan .image .icons{
     position: absolute;
     bottom:-7rem; left:0; right:0;
     display: flex;
 }
-
-.products .box-container .box:hover .image .icons{
+.products .box-container .box-penjualan:hover .image .icons{
     bottom:0;
 }
-
-.products .box-container .box .image .icons a{
-    height: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
+.products .box-container .box-penjualan .image .icons a{
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
     width:50%;
     background:var(--warna1);
     color:#fff;
 }
-
-.products .box-container .box .image .icons .cart-btn{
+.products .box-container .box-penjualan .image .icons .cart-btn{
     border-left: .1rem solid #fff7;
     border-right: .1rem solid #fff7;
     width:100%;
 }
-
-.products .box-container .box .image .icons a:hover{
+.products .box-container .box-penjualan .image .icons a:hover{
     background: var(--warna2);
 }
-
-.products .box-container .box .content{
+.products .box-container .box-penjualan .content{
     padding:2rem;
     text-align: center;
 }
-
-.products .box-container .box .content h3{
-    font-size: 2.5rem;
+.products .box-container .box-penjualan .content h3{
+    font-size: 1.7rem;
     color: var(--warna2);
 }
-
-.products .box-container .box .content .price{
-    font-size: 2.5rem;
+.products .box-container .box-penjualan .content .price{
+    font-size: 1.3rem;
     color:var(--warna1);
     font-weight: bolder;
     padding-top: 1rem;
 }
-
-.products .box-container .box .content .price span{
-    font-size: 1.5rem;
+.products .box-container .box-penjualan .content .price span{
+    font-size: 1rem;
     color:#999;
     font-weight: lighter;
     text-decoration: line-through;
 }
+.products .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.products .pagination a {
+    display: inline-block;
+    padding: .3rem .8rem;
+    font-size: 1rem;
+    background-color: var(--warna2);
+    text-decoration: none;
+    color: white;
+    border-radius: .3rem;
+    margin-right: .3rem;
+    cursor: pointer;
+}
+.products .pagination a.active {
+    background-color: var(--warna1);
+    color: #fff;
+}
+.products .pagination .pages{
+    display: inline-block;
+}
+/* Section Produck yang dijual End */
 
+
+
+/* Section Review dari pelanggan start */
 .review .box-container{
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
 }
-
 .review .box-container .box{
     flex:1 1 30rem;
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
@@ -333,57 +347,53 @@ header .fa-bars{
     position: relative;
     border:.1rem solid rgba(0,0,0,.1);
 }
-
 .review .box-container .box .fa-quote-right{
     position: absolute;
     bottom:3rem; right:3rem;
-    font-size: 6rem;
+    font-size: 3rem;
     color:#eee;
 }
-
 .review .box-container .box .stars i{
     color:var(--warna2);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-
 .review .box-container .box p{
     color:#999;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5;
     padding-top: 2rem;
 }
-
 .review .box-container .box .user{
     display: flex;
     align-items: center;
     padding-top: 2rem;
 }
-
 .review .box-container .box .user img{
-    height:6rem;
-    width:6rem;
+    height:4rem;
+    width:4rem;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 1rem;
 }
-
 .review .box-container .box .user h3{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--warna2);
 }
-
 .review .box-container .box .user span{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color:#999;
 }
+/* Section Review dari pelanggan End */
 
+
+
+/* Section Contact Start */
 .contact .row{
     display: flex;
     flex-wrap: wrap-reverse;
     gap:1.5rem;
     align-items: center;
 }
-
 .contact .row form{
     flex:1 1 40rem;
     padding:2rem 2.5rem;
@@ -392,18 +402,15 @@ header .fa-bars{
     background: #fff;
     border-radius: .5rem;
 }
-
 .contact .row .image{
     flex:1 1 40rem;
 }
-
 .contact .row .image img{
     width: 100%;
 }
-
 .contact .row form .box{
     padding:1rem;
-    font-size: 1.7rem;
+    font-size: 1rem;
     color: var(--warna2);
     text-transform: none;
     border:.1rem solid rgba(0,0,0,.1);
@@ -411,104 +418,76 @@ header .fa-bars{
     margin:.7rem 0;
     width: 100%;
 }
-
 .contact .row form .box:focus{
     border-color: var(--warna1);
 }
-
 .contact .row form textarea{
-    height: 15rem;
+    height: 10rem;
     resize: none;
 }
+/* Section Contact End */
 
+
+
+/* Section Footer Start */
 .footer .box-container{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap:1.5rem;
+    gap:2rem;
 }
-
 .footer .box-container .box{
-    flex:1 1 25rem;
+    flex:1 1 20rem;
 }
-
 .footer .box-container .box h3{
     color: var(--warna2);
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     padding:1rem 0;
 }
-
 .footer .box-container .box a{
     display: block;
     color:#666;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding:1rem 0;
 }
-
 .footer .box-container .box a:hover{
     color:var(--warna1);
     text-decoration: underline;
 }
-
 .footer .box-container .box  img{
     margin-top: 1rem;
 }
-
 .footer .credit{
     text-align: center;
     padding:1.5rem;
     margin-top: 1.5rem;
     padding-top: 2.5rem;
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--warna1);
     border-top: .1rem solid rgba(0,0,0,.1);
-    padding-bottom: 9rem;
 }
-
 .footer .credit span{
     color:var(--warna2);
 }
+/* Section Footer End */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries  */
-@media (max-width:991px){
+/* Media Responsive Start */
+@media (max-width:1440px){
     
     html{
-        font-size: 55%;
+        font-size: 80%;
     }
-
-    header{
-        padding:2rem;
-    }
-
-    section{
-        padding:2rem;
-    }
-
     .home{
         background-position: left;
     }
 
 }
-
-@media (max-width:768px){
-
+@media (max-width:1080px){
     header .fa-bars{
         display: block;
     }
-
     header .navbar{
         position:absolute;
         top:100%; left:0; right:0;
@@ -516,11 +495,9 @@ header .fa-bars{
         border-top: .1rem solid rgba(0,0,0,.1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
-
     header #toggler:checked ~ .navbar{
         clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
-
     header .navbar a{
         margin:1.5rem;
         padding:1.5rem;
@@ -528,33 +505,10 @@ header .fa-bars{
         border:.1rem solid rgba(0,0,0,.1);
         display: block;
     }
-
-    .home .content h3{
-        font-size: 5rem;
-    }
-
-    .home .content span{
-        font-size: 2.5rem;
-    }
-
-    .icons-container .icons h3{
-        font-size: 2rem;
-    }
-    
-    .icons-container .icons span{
-        font-size: 1.7rem;
-    }
-    
 }
-
-@media (max-width:450px){
-    
+@media (max-width:768px){
     html{
-        font-size: 50%;
+        font-size: 60%;
     }
-
-    .heading{
-        font-size: 3rem;
-    }
-
 }
+/* Media Responsive End */
