@@ -62,7 +62,7 @@ header .logo span{
     color:var(--warna1);
 }
 header .navbar a{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding:0 1.5rem;
     color:#666;
 }
@@ -70,7 +70,7 @@ header .navbar a:hover{
     color:var(--warna2);
 }
 header .icons a{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--warna2);
     margin-left: 1.5rem;
 }
@@ -132,13 +132,12 @@ header .fa-bars{
     border-radius: .5rem;
     background: var(--warna2);
     color:#fff;
-    padding:.7rem 1.7rem;
+    padding:.7rem 1rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .btn:hover{
     background:var(--warna1);
-    transform: scale(1.1);
 }
 /* Pengaturan button End */
 
